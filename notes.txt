@@ -1,0 +1,2 @@
+source code & sql on github: https://github.com/scorpio199/simple-crud
+postman documentation: https://documenter.getpostman.com/view/42989003/2sAYk7SPth
