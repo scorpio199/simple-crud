@@ -151,8 +151,7 @@ app.delete('/users/:id', authenticateToken, (req, res) => {
   });
 });
 
-app.get('/filter', async (req, res) => {
-
+app.get('/filter', authenticateToken, async (req, res) => {
   try {
     const response = await fetch('https://ogienurdiana.com/career/ecc694ce4e7f6e45a5a7912cde9fe131');
     const data = await response.json(); // Convert response to JSON
@@ -183,11 +182,7 @@ app.get('/filter', async (req, res) => {
 
     res.json({
       filteredData
-    });
-    
-    //console.log('Fetched Data:', data); // Log to console
-
-    //res.json(data.DATA); // Send the data as a response (optional)
+    });    
   } catch (error) {
     console.error('Error fetching data:', error);
     res.status(500).send('Something went wrong!');
